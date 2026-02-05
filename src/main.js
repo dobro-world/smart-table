@@ -42,10 +42,10 @@ function render(action) {
     let result = [...data]; // копируем для последующего изменения
     // @todo: использование
 
-    result = applySearching(result, state, action);
+    /*result = applySearching(result, state, action);
     result = applyFiltering(result, state, action);
     result = applySorting(result, state, action);
-    result = applyPagination(result, state, action);
+    result = applyPagination(result, state, action);*/
 
     sampleTable.render(result)
 }
@@ -61,9 +61,9 @@ const sampleTable = initTable({
 
 const applySearching = initSearching('search');
 
-const applyFiltering = initFiltering(sampleTable.filter.elements, {
+/*const applyFiltering = initFiltering(sampleTable.filter.elements, {
     searchBySeller: indexes.sellers
-});
+});*/
 
 const applySorting = initSorting([        // Нам нужно передать сюда массив элементов, которые вызывают сортировку, чтобы изменять их визуальное представление
     sampleTable.header.elements.sortByDate,

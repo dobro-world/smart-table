@@ -13,8 +13,13 @@ export function initFiltering(elements) {
 
     const applyFiltering = (query, state, action) => {
         // код с обработкой очистки поля
-         
-
+         if (action && action.name === 'clear') {
+            Object.keys(elements).forEach(key => {
+                if (elements[key] && elements[key].value) {
+                    elements[key].value = '';
+                }
+            });
+        }
         // @todo: #4.5 — отфильтровать данные, используя компаратор
         const filter = {};
         Object.keys(elements).forEach(key => {
